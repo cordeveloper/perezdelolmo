@@ -1,0 +1,34 @@
+{
+  "name": "perezdelolmo",
+  "version": "1.0.0",
+  "description": "Perez del Olmo Abogados Wordpress theme",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cordeveloper/perezdelolmo.git"
+  },
+  "author": "Cordeveloper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cordeveloper/perezdelolmo/issues"
+  },
+  "homepage": "https://github.com/cordeveloper/perezdelolmo#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "autoprefixer": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^1.3.3",
+    "node-sass": "^5.0.0",
+    "postcss-loader": "^4.1.0",
+    "sass-loader": "^10.1.0",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0"
+  }
+}
