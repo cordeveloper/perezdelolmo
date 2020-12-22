@@ -1,0 +1,28 @@
+version: "3"
+services:
+  mariadb:
+    image: 'mariadb:latest'    
+    volumes:
+      - db_data:/var/lib/mysql      
+      - ./etc/mysql/data:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    env_file:
+      - ./etc/mysql/env
+  web:
+    build: ./etc/docker/php7/.
+    ports:
+     - "80:80"
+     - "443:443"
+    depends_on:
+     - mariadb    
+    volumes:
+     - ./etc/php:/usr/local/etc/php
+     - ./etc/apache2/sites-enabled:/etc/apache2/sites-enabled
+     - ./etc/apache2/ssl:/etc/apache2/ssl/
+     - ./source/:/var/www/html
+     - ./etc/hosts:/etc/hosts
+    extra_hosts:     
+     - host.local:${HOST_LOCAL:-172.17.0.1}
+volumes:
+  db_data:

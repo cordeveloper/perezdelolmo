@@ -1,0 +1,5 @@
+./source/wp-content/languages/
+env
+dist
+node_modules
+source/wp-content/uploads/
