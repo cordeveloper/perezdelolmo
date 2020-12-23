@@ -1,0 +1,10 @@
+a{
+    text-decoration: none;
+    &:link,
+    &:active,
+    &:hover,
+    &:visited{
+        color: inherit;
+        text-decoration: none;
+    }
+}

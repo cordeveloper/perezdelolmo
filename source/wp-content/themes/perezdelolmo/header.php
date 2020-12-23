@@ -26,9 +26,25 @@
 		<div class="page-wrapper">
 
 			<!-- nav -->
-		<!-- 	<nav class="nav" role="navigation">
-				<?php html5blank_nav(); ?>
-			</nav> -->
+			<nav class="menu" role="navigation">
+				<div class="menu__schedule"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="menu__brand">
+								<div class="menu__brand__bg"></div>
+								<div class="logo">
+									<span>PÉREZ DEL OLMO</span>
+									<span>ABOGADOS</span>
+								</div>
+							</div>
+							<div class="menu__container">
+								<?php html5blank_nav(); ?>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</nav> 
 			<!-- /nav -->
 
 			
