@@ -1,7 +1,49 @@
 .hero{
-  height: 100vh;  
+  height: 100vh;
+  max-height: 320px;  
   overflow: hidden;
   position: relative;
+
+  @include mq(mobile){
+    max-height: 432px;
+  }
+
+  @include mq(tablet){
+    max-height: 558px;
+  }
+
+  @include mq(laptop){
+    max-height: 760px;  
+  }
+
+}
+
+.hero__bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: bottom;
+
+  background-image: url(../img/hero/hero-568x320.jpg);
+
+  @include mq(mobile){
+    background-image: url(../img/hero/hero-768x432.jpg);
+  }
+
+  @include mq(tablet){
+    background-image: url(../img/hero/hero-992x558.jpg);
+  }
+
+  @include mq(laptop){
+    background-image: url(../img/hero/hero-1536x864.jpg);
+  }
+
+  @include mq(desktop){
+    background-image: url(../img/hero/hero.jpg);
+  }
 }
 
 .hero__container{
@@ -18,20 +60,20 @@
 
 }
 
-.hero__bg{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  img{
-    width: 100%;
-  }
-}
-
 .hero__legend{
   color: $white;
+  padding-right: 0;
+  display: none;
+  @include mq(mobile){
+    display: block;
+  }
+
+  @include mq(laptop){
+    padding-right: 50px;
+  }
+  @include mq(large-desktop){
+    padding-right: 0;
+  }
 }
 
 .hero__line{
@@ -43,13 +85,31 @@
 
 .hero__legend__high{
   font-family: 'Anton', sans-serif;
-  font-size: 65px;
+  font-size: 70px;
   text-transform: uppercase;
   line-height: 1.1;
+
+  @include mq(mobile){
+    font-size: 40px;
+  }
+
+  @include mq(tablet){
+    font-size: 50px;
+  }
+  @include mq(desktop){
+    font-size: 70px;
+  }
 }
 
 .hero__subtitle{
   font-family: 'Raleway', sans-serif;
-  font-size: 19px;
+  font-size: 15px;
   line-height: 1.5;
+
+  @include mq(tablet){
+    font-size: 16px;
+  }
+  @include mq(desktop){
+    font-size: 19px;
+  }
 }

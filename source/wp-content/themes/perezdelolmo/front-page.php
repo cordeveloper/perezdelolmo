@@ -3,10 +3,7 @@
 <header class="header" role="banner">
   
     <section class="hero">
-        <picture class="hero__bg overlay">
-            <source media="(max-width: 992px)" srcset="<?php echo get_the_post_thumbnail_url(null, '992x992'); ?>">
-            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Diosa Justicia Pérez del Olmo abogados">
-        </picture>
+        <section class="hero__bg overlay"></section>
         <section class="container hero__container">
             <div class="row">
                 <div class="col-xs-12">

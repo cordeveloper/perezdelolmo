@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: ['./development/app.js'],
@@ -83,6 +84,11 @@ module.exports = {
         ]
     },
     plugins: [
+        new CopyPlugin({
+            patterns: [
+                { from:  './development/img/', to: path.resolve("../source/wp-content/themes/sanfernando", `img`) }
+              ],
+        }),
         new MiniCssExtractPlugin({
             filename: 'css/style.css'
         }),
