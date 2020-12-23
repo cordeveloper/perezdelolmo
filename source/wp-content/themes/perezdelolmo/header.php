@@ -13,31 +13,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>">
 
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;800&family=Raleway:wght@400;900&family=Roboto&display=swap" rel="stylesheet">
+
 		<?php wp_head(); ?>
 	
 	</head>
 	<body <?php body_class(); ?>>
 
 		<!-- wrapper -->
-		<div class="wrapper">
+		<div class="page-wrapper">
 
-			<!-- header -->
-			<header class="header clear" role="banner">
+			<!-- nav -->
+		<!-- 	<nav class="nav" role="navigation">
+				<?php html5blank_nav(); ?>
+			</nav> -->
+			<!-- /nav -->
 
-					<!-- logo -->
-					<div class="logo">
-						<a href="<?php echo esc_url( home_url() ); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.svg" alt="Logo" class="logo-img">
-						</a>
-					</div>
-					<!-- /logo -->
-
-					<!-- nav -->
-					<nav class="nav" role="navigation">
-						<?php html5blank_nav(); ?>
-					</nav>
-					<!-- /nav -->
-
-			</header>
-			<!-- /header -->
+			

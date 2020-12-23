@@ -1,0 +1,80 @@
+
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    width: calc(100% - 2*#{$gutter});
+    max-width: $container-maxwidth;
+    padding-right: 0;
+    padding-left: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.container--full{
+    margin-right: auto;
+    margin-left: auto;
+    width:100%;
+    box-sizing: border-box;
+/* max-width: $container-fullwidth;
+@media(min-width: $container-fullwidth){
+    width: calc(100% - 2*#{$gutter});
+} */
+.row{
+    margin-right: 0;
+    margin-left:0;
+    @media(min-width: $container-fullwidth){
+    margin-right: -#{$gutter};
+    margin-left: -#{$gutter};
+    }
+} 
+*[class^='col-']{
+    padding-right: 0;
+    padding-left: 0;
+    @media(min-width: $container-fullwidth){
+    padding-right: $gutter;
+    padding-left: $gutter;
+    }
+}
+}
+
+.row{
+box-sizing: border-box;
+display: flex;
+flex: 0 1 auto;
+flex-direction: row;
+flex-wrap: wrap;
+margin-right: -#{$gutter};
+margin-left: -#{$gutter};
+}
+
+*[class^='col-']{
+flex-basis: 100%;
+max-width: 100%;
+padding-right: $gutter;
+padding-left: $gutter;
+box-sizing: border-box;
+}
+
+@each $break,
+$val in $breakpoints {
+@for $i from 1 through $size-grid {
+    .col-#{$break}-#{$i} {
+    
+    @if $break == 'xs'{
+        width: ($i / $size-grid)*100%;
+        max-width: ($i / $size-grid)*100%;
+        flex-basis: ($i / $size-grid)*100%;
+        flex: 0 0 auto;
+    } @else {
+        @media (min-width: $val) {
+        width: ($i / $size-grid)*100%;
+        max-width: ($i / $size-grid)*100%;
+        flex-basis: ($i / $size-grid)*100%;
+        flex: 0 0 auto;
+        }
+    }
+    }
+}
+}
+  
