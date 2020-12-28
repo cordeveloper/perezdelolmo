@@ -3,7 +3,6 @@
   max-height: 320px;  
   overflow: hidden;
   position: relative;
-  top: -70px;
 
   @include mq(mobile){
     max-height: 432px;
