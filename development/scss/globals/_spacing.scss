@@ -1,0 +1,238 @@
+// SPACING -- Margin - Padding
+
+$space-positions: (
+  t: 'top',
+  b: 'bottom',
+  l: 'left',
+  r: 'right',
+  x: 'horizontal',
+  y: 'vertical',
+  xy: 'full'
+);
+
+
+$space-unit-general: 16px;
+
+
+@each $pos,$val in $space-positions {
+  @each $break,$valb in $breakpoints{
+    @for $i from 0 through 10{
+      .m-#{$pos}-#{$i}{
+        @if($pos == 'x'){
+          margin-left: ($i * $space-unit-general);
+          margin-right: ($i * $space-unit-general);
+        } @else if($pos == 'y') {
+          margin-top: ($i * $space-unit-general);
+          margin-bottom: ($i * $space-unit-general);
+        } 
+        @else if($pos == 'xy') {
+          margin-left: ($i * $space-unit-general);
+          margin-right: ($i * $space-unit-general);
+          margin-top: ($i * $space-unit-general);
+          margin-bottom: ($i * $space-unit-general);
+        }
+        @else {
+          margin-#{$val}: ($i * $space-unit-general);
+        }
+      }
+      .m-#{$pos}-#{$break}-#{$i}{
+        
+        @if $break == 'xs'{
+          @if($pos == 'x'){
+            margin-left: ($i * $space-unit-general);
+            margin-right: ($i * $space-unit-general);
+          } @else if($pos == 'y') {
+            margin-top: ($i * $space-unit-general);
+            margin-bottom: ($i * $space-unit-general);
+          } 
+          @else if($pos == 'xy') {
+            margin-left: ($i * $space-unit-general);
+            margin-right: ($i * $space-unit-general);
+            margin-top: ($i * $space-unit-general);
+            margin-bottom: ($i * $space-unit-general);
+          }
+          @else {
+            margin-#{$val}: ($i * $space-unit-general);
+          }
+        }@else {
+          
+          @media (min-width: $valb) {
+            @if($pos == 'x'){
+              margin-left: ($i * $space-unit-general);
+              margin-right: ($i * $space-unit-general);
+            } @else if($pos == 'y') {
+              margin-top: ($i * $space-unit-general);
+              margin-bottom: ($i * $space-unit-general);
+            } 
+            @else if($pos == 'xy') {
+              margin-left: ($i * $space-unit-general);
+              margin-right: ($i * $space-unit-general);
+              margin-top: ($i * $space-unit-general);
+              margin-bottom: ($i * $space-unit-general);
+            }
+            @else {
+              margin-#{$val}: ($i * $space-unit-general);
+            }
+          }
+        }
+      }
+
+      .p-#{$pos}-#{$i}{
+        @if($pos == 'x'){
+          padding-left: ($i * $space-unit-general);
+          padding-right: ($i * $space-unit-general);
+        } @else if($pos == 'y') {
+          padding-top: ($i * $space-unit-general);
+          padding-bottom: ($i * $space-unit-general);
+        } 
+        @else if($pos == 'xy') {
+          padding-left: ($i * $space-unit-general);
+          padding-right: ($i * $space-unit-general);
+          padding-top: ($i * $space-unit-general);
+          padding-bottom: ($i * $space-unit-general);
+        }
+        @else {
+          padding-#{$val}: ($i * $space-unit-general);
+        }
+      }
+      .p-#{$pos}-#{$break}-#{$i}{
+        
+        @if $break == 'xs'{
+          @if($pos == 'x'){
+            padding-left: ($i * $space-unit-general);
+            padding-right: ($i * $space-unit-general);
+          } @else if($pos == 'y') {
+            padding-top: ($i * $space-unit-general);
+            padding-bottom: ($i * $space-unit-general);
+          } 
+          @else if($pos == 'xy') {
+            padding-left: ($i * $space-unit-general);
+            padding-right: ($i * $space-unit-general);
+            padding-top: ($i * $space-unit-general);
+            padding-bottom: ($i * $space-unit-general);
+          }
+          @else {
+            padding-#{$val}: ($i * $space-unit-general);
+          }
+        }@else {
+          
+          @media (min-width: $valb) {
+            @if($pos == 'x'){
+              padding-left: ($i * $space-unit-general);
+              padding-right: ($i * $space-unit-general);
+            } @else if($pos == 'y') {
+              padding-top: ($i * $space-unit-general);
+              padding-bottom: ($i * $space-unit-general);
+            } 
+            @else if($pos == 'xy') {
+              padding-left: ($i * $space-unit-general);
+              padding-right: ($i * $space-unit-general);
+              padding-top: ($i * $space-unit-general);
+              padding-bottom: ($i * $space-unit-general);
+            }
+            @else {
+              padding-#{$val}: ($i * $space-unit-general);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mixins space
+@mixin m-t-0{margin-top: $space-unit-general * 0;}
+@mixin m-t-1{margin-top: $space-unit-general * 1;}
+@mixin m-t-2{margin-top: $space-unit-general * 2;}
+@mixin m-t-3{margin-top: $space-unit-general * 3;}
+@mixin m-t-4{margin-top: $space-unit-general * 4;}
+@mixin m-t-5{margin-top: $space-unit-general * 5;}
+@mixin m-t-6{margin-top: $space-unit-general * 6;}
+@mixin m-t-7{margin-top: $space-unit-general * 7;}
+@mixin m-t-8{margin-top: $space-unit-general * 8;}
+@mixin m-t-9{margin-top: $space-unit-general * 9;}
+@mixin m-t-10{margin-top: $space-unit-general * 10;}
+
+@mixin m-b-0{margin-bottom: $space-unit-general * 0;}
+@mixin m-b-1{margin-bottom: $space-unit-general * 1;}
+@mixin m-b-2{margin-bottom: $space-unit-general * 2;}
+@mixin m-b-3{margin-bottom: $space-unit-general * 3;}
+@mixin m-b-4{margin-bottom: $space-unit-general * 4;}
+@mixin m-b-5{margin-bottom: $space-unit-general * 5;}
+@mixin m-b-6{margin-bottom: $space-unit-general * 6;}
+@mixin m-b-7{margin-bottom: $space-unit-general * 7;}
+@mixin m-b-8{margin-bottom: $space-unit-general * 8;}
+@mixin m-b-9{margin-bottom: $space-unit-general * 9;}
+@mixin m-b-10{margin-bottom: $space-unit-general * 10;}
+
+@mixin m-l-0{margin-left: $space-unit-general * 0;}
+@mixin m-l-1{margin-left: $space-unit-general * 1;}
+@mixin m-l-2{margin-left: $space-unit-general * 2;}
+@mixin m-l-3{margin-left: $space-unit-general * 3;}
+@mixin m-l-4{margin-left: $space-unit-general * 4;}
+@mixin m-l-5{margin-left: $space-unit-general * 5;}
+@mixin m-l-6{margin-left: $space-unit-general * 6;}
+@mixin m-l-7{margin-left: $space-unit-general * 7;}
+@mixin m-l-8{margin-left: $space-unit-general * 8;}
+@mixin m-l-9{margin-left: $space-unit-general * 9;}
+@mixin m-l-10{margin-left: $space-unit-general * 10;}
+
+@mixin m-r-0{margin-right: $space-unit-general * 0;}
+@mixin m-r-1{margin-right: $space-unit-general * 1;}
+@mixin m-r-2{margin-right: $space-unit-general * 2;}
+@mixin m-r-3{margin-right: $space-unit-general * 3;}
+@mixin m-r-4{margin-right: $space-unit-general * 4;}
+@mixin m-r-5{margin-right: $space-unit-general * 5;}
+@mixin m-r-6{margin-right: $space-unit-general * 6;}
+@mixin m-r-7{margin-right: $space-unit-general * 7;}
+@mixin m-r-8{margin-right: $space-unit-general * 8;}
+@mixin m-r-9{margin-right: $space-unit-general * 9;}
+@mixin m-r-10{margin-right: $space-unit-general * 10;}
+
+@mixin p-t-0{padding-top: $space-unit-general * 0;}
+@mixin p-t-1{padding-top: $space-unit-general * 1;}
+@mixin p-t-2{padding-top: $space-unit-general * 2;}
+@mixin p-t-3{padding-top: $space-unit-general * 3;}
+@mixin p-t-4{padding-top: $space-unit-general * 4;}
+@mixin p-t-5{padding-top: $space-unit-general * 5;}
+@mixin p-t-6{padding-top: $space-unit-general * 6;}
+@mixin p-t-7{padding-top: $space-unit-general * 7;}
+@mixin p-t-8{padding-top: $space-unit-general * 8;}
+@mixin p-t-9{padding-top: $space-unit-general * 9;}
+@mixin p-t-10{padding-top: $space-unit-general * 10;}
+
+@mixin p-b-0{padding-bottom: $space-unit-general * 0;}
+@mixin p-b-1{padding-bottom: $space-unit-general * 1;}
+@mixin p-b-2{padding-bottom: $space-unit-general * 2;}
+@mixin p-b-3{padding-bottom: $space-unit-general * 3;}
+@mixin p-b-4{padding-bottom: $space-unit-general * 4;}
+@mixin p-b-5{padding-bottom: $space-unit-general * 5;}
+@mixin p-b-6{padding-bottom: $space-unit-general * 6;}
+@mixin p-b-7{padding-bottom: $space-unit-general * 7;}
+@mixin p-b-8{padding-bottom: $space-unit-general * 8;}
+@mixin p-b-9{padding-bottom: $space-unit-general * 9;}
+@mixin p-b-10{padding-bottom: $space-unit-general * 10;}
+
+@mixin p-l-0{padding-left: $space-unit-general * 0;}
+@mixin p-l-1{padding-left: $space-unit-general * 1;}
+@mixin p-l-2{padding-left: $space-unit-general * 2;}
+@mixin p-l-3{padding-left: $space-unit-general * 3;}
+@mixin p-l-4{padding-left: $space-unit-general * 4;}
+@mixin p-l-5{padding-left: $space-unit-general * 5;}
+@mixin p-l-6{padding-left: $space-unit-general * 6;}
+@mixin p-l-7{padding-left: $space-unit-general * 7;}
+@mixin p-l-8{padding-left: $space-unit-general * 8;}
+@mixin p-l-9{padding-left: $space-unit-general * 9;}
+@mixin p-l-10{padding-left: $space-unit-general * 10;}
+
+@mixin p-r-0{padding-right: $space-unit-general * 0;}
+@mixin p-r-1{padding-right: $space-unit-general * 1;}
+@mixin p-r-2{padding-right: $space-unit-general * 2;}
+@mixin p-r-3{padding-right: $space-unit-general * 3;}
+@mixin p-r-4{padding-right: $space-unit-general * 4;}
+@mixin p-r-5{padding-right: $space-unit-general * 5;}
+@mixin p-r-6{padding-right: $space-unit-general * 6;}
+@mixin p-r-7{padding-right: $space-unit-general * 7;}
+@mixin p-r-8{padding-right: $space-unit-general * 8;}
+@mixin p-r-9{padding-right: $space-unit-general * 9;}
+@mixin p-r-10{padding-right: $space-unit-general * 10;}

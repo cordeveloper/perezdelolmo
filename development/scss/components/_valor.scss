@@ -1,0 +1,30 @@
+.valor{
+    height: 350px;
+    background-color: $color-primary;
+    background-size: cover;
+    position: relative;
+
+    &.valor--1{
+        background-image: url(../img/valor/valor.jpeg)
+    }
+    &.valor--2{
+        background-image: url(../img/valor/valor.jpeg)
+    }
+    &.valor--3{
+        background-image: url(../img/valor/valor.jpeg)
+    }
+}
+
+.valor__legend {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    span:first-child{
+        font-family: Anton, sans-serif;
+    }
+    span: second-child{
+        font-family: Montserrat, sans-serif;
+    }
+}

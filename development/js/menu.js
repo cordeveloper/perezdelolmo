@@ -21,7 +21,7 @@ export default class Menu {
 
     init(){
         ScrollTrigger.create({
-            start: 'top',
+            start: 'top -100',
             end: 99999,
             toggleClass: {className: 'scrolled', targets: ['#menu-bar', '#side-menu',  '#menu-schedule']}
           });

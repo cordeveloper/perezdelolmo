@@ -1,6 +1,11 @@
 body{
    overflow-x:hidden;
-   height: 300vh;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 15px;
+   line-height: 1.4;
+   color: $black;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 
    &.block{
     overflow: hidden;
