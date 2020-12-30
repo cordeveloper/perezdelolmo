@@ -1,5 +1,5 @@
 .valor{
-    height: 350px;
+    height: 280px;
     background-color: $color-primary;
     background-size: cover;
     position: relative;
@@ -13,6 +13,14 @@
     &.valor--3{
         background-image: url(../img/valor/valor.jpeg)
     }
+
+    @include mq(mobile){
+        height: 300px;
+    }
+
+    @include mq(tablet){
+        height: 350px;
+    }
 }
 
 .valor__legend {
@@ -21,10 +29,18 @@
     bottom: 0;
     left: 0;
     color: #fff;
+    height: 60%;
+    width: 100%;
+
+    padding: 0 15px;
+    box-sizing: border-box;
     span:first-child{
         font-family: Anton, sans-serif;
+        display:block;
+        font-size: 30px;
+        text-transform: uppercase;
     }
-    span: second-child{
+    span:second-child{
         font-family: Montserrat, sans-serif;
     }
 }

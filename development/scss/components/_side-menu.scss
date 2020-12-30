@@ -36,7 +36,11 @@
         li{
             margin-bottom: 15px;
             line-height: 1.6;
-            font-size: 15px;
+            font-size: 12px;
+
+            @include mq(mobile){
+                font-size: 15px;
+            }
 
             svg{
                 width: 17px;

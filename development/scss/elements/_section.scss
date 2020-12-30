@@ -1,3 +1,30 @@
 .section{
-    padding: 32px 0;
+    padding: 0 0 32px;
+
+    &.section--grey{
+        background-color: $grey;
+    }
+
+    @include mq(desktop){
+        padding: 62px 0;
+    }
+}
+
+.section-overflowx{
+    overflow-x: auto;
+    .container{
+        .row{
+            flex-wrap: nowrap;
+            [class*="col"]{
+                max-width: 399.98px;
+                min-width: 80%;
+                @include mq(mobile){
+                    min-width: 48%
+                }
+                @include mq(tablet){
+                    min-width: 33.33%;
+                }
+            } 
+        }
+    }
 }

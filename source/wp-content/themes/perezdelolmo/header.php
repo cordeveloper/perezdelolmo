@@ -14,7 +14,7 @@
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>">
 
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;800&family=Raleway:wght@400;500;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&family=Raleway:wght@400;500;900&display=swap" rel="stylesheet">
 
 		<?php wp_head(); ?>
 	

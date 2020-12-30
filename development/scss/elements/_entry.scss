@@ -15,4 +15,13 @@
         margin-top: 4px;
         display: block;
     }
+
+    &.entry--little{
+        font-size: 16px;
+        font-weight: 600;
+
+        &:after{
+            height: 4px;
+        }
+    }
 }
