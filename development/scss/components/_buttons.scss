@@ -1,0 +1,49 @@
+@mixin btn-reset {
+    -webkit-appearance: button;
+    border: none;
+    box-shadow: none;
+    outline: 0;
+    cursor: pointer;
+    overflow: hidden;
+    display: inline-block;
+    box-sizing: border-box;
+    background: transparent;
+    white-space: nowrap;
+    position: relative;
+  
+    &:link,
+    &:active,
+    &:visited,
+    &:active{
+      border: none;
+      outline: 0;
+      color: inherit; 
+    }
+  
+    @content;
+}
+
+.btn,
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[role="button"] {
+    @include btn-reset;
+    padding: 8px 8px;
+}
+
+.btn--black{
+    background-color: $color-secondary;
+    font-family: Montserrat, sans-serif;
+    &:link,
+    &:active,
+    &:visited,
+    &:active{
+        color: #fff;
+    }
+
+    &:hover{
+        background-color: $color-ternary;
+    }
+}

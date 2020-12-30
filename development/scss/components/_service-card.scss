@@ -1,5 +1,10 @@
 .service-card{
     display: flex;
+    flex-direction: column;
+
+    @include mq(mobile){
+        flex-direction: row;
+    }
 }
 .service-card__icon{
     width: 60px;
@@ -17,6 +22,38 @@
             fill: #555454;
         }
     }
+
+    display: none;
+    @include mq(mobile){
+        display: flex;
+    }
+}
+
+.service-card__header{
+    display: flex;
+}
+
+.service-card__icon--mb{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #E9E9E9;
+    border-radius: 50%;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg{
+        width: 20px;
+        path{
+            fill: #555454;
+        }
+    }
+
+    @include mq(mobile){
+        display: none;
+    }
 }
 
 .service-card__desc{
@@ -25,8 +62,9 @@
 
 .service-card__action{
     text-transform:uppercase;
-    color: $color-primary;
-    font-size: 16px;
+    color: $black;
+    font-size: 13px;
     font-family: Anton, sans-serif;
     margin-top: 16px;
+   
 }
