@@ -5,6 +5,10 @@
         transition:height 0.2s ease;
     }
 
+    .menu__container ul{
+        transition: padding .2s ease;
+    }
+
     .menu__container ul > li{
         transition: font-size .2s ease-out;
     }
@@ -24,6 +28,7 @@
         }
         
         .menu__container ul{
+           padding-left: 10%;
            &>li{
                color: $black;
                font-size: 13px;
