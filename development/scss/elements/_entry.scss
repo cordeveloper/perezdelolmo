@@ -28,6 +28,13 @@
         @include mq(desktop){
             font-size: 30px;
         }
+
+        &.green{
+            color: $black;
+            &:after{
+                background-color: $color-primary;
+            }
+        }
     }
 
     &.entry--little{

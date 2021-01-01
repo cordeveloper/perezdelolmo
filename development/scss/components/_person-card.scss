@@ -1,0 +1,25 @@
+.person-card__header{
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+}
+
+.person-card__footer{
+    background-color: #fff;
+    height: 110px;
+    box-sizing: border-box;
+    padding: 25px 15px;
+}
+
+.person-card__name{
+    color: $black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.person-card__job{
+    font-family: Anton, sans-serif;
+    font-size: 13px;
+    color: $color-primary;
+    text-transform: uppercase;
+}

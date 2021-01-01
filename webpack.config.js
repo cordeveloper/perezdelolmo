@@ -86,7 +86,7 @@ module.exports = {
     plugins: [
         new CopyPlugin({
             patterns: [
-                { from:  './development/img/', to: path.resolve("../source/wp-content/themes/sanfernando", `img`) }
+                { from:  './development/img/', to: path.resolve("./source/wp-content/themes/perezdelolmo/assets", `img`) }
               ],
         }),
         new MiniCssExtractPlugin({
