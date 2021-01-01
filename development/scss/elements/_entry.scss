@@ -16,6 +16,20 @@
         display: block;
     }
 
+    &.entry--high{
+        font-size: 20px;
+        color: #fff;
+        &:after{
+            background-color: $color-ternary;
+            max-width: 40px;
+            width: 30%;
+        }
+
+        @include mq(desktop){
+            font-size: 30px;
+        }
+    }
+
     &.entry--little{
         font-size: 16px;
         font-weight: 600;

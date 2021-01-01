@@ -90,12 +90,7 @@
         }
 
         li{
-            &:nth-child(2){
-                display: none;
-                @include mq(tablet){
-                    display: flex;
-                }
-            }
+          
     
             &:last-child{
                 display: none;
