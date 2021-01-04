@@ -19,6 +19,7 @@
     &.entry--high{
         font-size: 20px;
         color: #fff;
+        position: relative;
         &:after{
             background-color: $color-ternary;
             max-width: 40px;
@@ -35,6 +36,54 @@
                 background-color: $color-primary;
             }
         }
+        span{
+            display: inline-block;
+            position: relative;
+            margin-left: 20%;
+            padding-right: 10px;
+            display: inline-flex;
+            align-items: center;
+            height: 60px;
+            .entry__skew{
+                display: block;
+                background-color: #fff;
+                width: 100%;
+                height: 60px;
+                position: absolute;
+                transform: skew(40deg);
+                left: 0%;
+                top: 0;
+                z-index: 0;
+                border-right: 10px solid $color-ternary;
+
+
+                &:after{
+                    content: "";
+                    position: absolute;
+                    right: 100%;
+                    width: 100vw;
+                    background-color: #fff;
+                    display: inline-block;
+                    height: 100%;
+                }
+
+             
+            }
+
+            .entry__text{
+                position: relative;
+            }
+
+            @include mq(desktop){
+                margin-left: 0;
+            }
+        }
+    }
+
+    &.no-after{
+        &:after{
+            display: none;
+        }
     }
 
     &.entry--little{
@@ -46,4 +95,8 @@
             background-color: $color-ternary;
         }
     }
+}
+
+[data-inviewport]{
+   visibility: hidden;
 }

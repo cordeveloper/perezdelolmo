@@ -15,6 +15,10 @@
     @include mq(desktop){
         padding: 62px 0;
     }
+
+    &.section--white{
+        background-color: #fff;
+    }
 }
 
 .section-overflowx{
@@ -40,6 +44,14 @@
     min-height: 100vh;
 }
 
+.main--grey{
+    background-color: $grey;
+}
+
 .main--top{
     margin-top: 102px;
+}
+
+.iframe-map{
+    width: 100%;
 }

@@ -7,6 +7,12 @@
     padding-top: 200px;
     color: #fff;
 
+    &.white{
+        &:after{
+            border-color: transparent transparent transparent #fff; 
+        }
+    }
+
     &:after{
         position: absolute;
         left: 0;
@@ -39,6 +45,7 @@
     @include mq(laptop){
         height: 60vh;
         max-height: 670px;
+        padding-top: 240px;
     }
 }
 
@@ -61,7 +68,7 @@
         }
 
         @include mq(desktop){
-            font-size: 15px;
+            font-size: 13px;
         }
     }
 

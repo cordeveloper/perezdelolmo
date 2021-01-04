@@ -64,6 +64,19 @@ if ( function_exists( 'add_theme_support' ) ) {
     Functions
 \*------------------------------------*/
 
+function pdo_get_team_members(){
+    $args = array(
+        'numberposts'       => -1,
+        'post_type'         => 'equipo'
+    );
+
+    $team = new WP_Query($args);
+
+    $team_members = $team->posts;
+    
+    return $team_members;
+}
+
 // HTML5 Blank navigation
 function html5blank_nav() {
     wp_nav_menu(
@@ -377,29 +390,30 @@ add_shortcode( 'html5_shortcode_demo_2', 'html5_shortcode_demo_2' ); // Place [h
     Custom Post Types
 \*------------------------------------*/
 
-// Create 1 Custom Post type for a Demo, called HTML5-Blank
+// Team members
 function create_post_type_html5() {
-    register_taxonomy_for_object_type( 'category', 'html5-blank' ); // Register Taxonomies for Category
-    register_taxonomy_for_object_type( 'post_tag', 'html5-blank' );
-    register_post_type( 'html5-blank', // Register Custom Post Type
+    register_taxonomy_for_object_type( 'category', 'Equipo' ); // Register Taxonomies for Category
+    register_taxonomy_for_object_type( 'post_tag', 'equipo' );
+    register_post_type( 'equipo', // Register Custom Post Type
         array(
         'labels'       => array(
-            'name'               => esc_html( 'HTML5 Blank Custom Post', 'html5blank' ), // Rename these to suit
-            'singular_name'      => esc_html( 'HTML5 Blank Custom Post', 'html5blank' ),
-            'add_new'            => esc_html( 'Add New', 'html5blank' ),
-            'add_new_item'       => esc_html( 'Add New HTML5 Blank Custom Post', 'html5blank' ),
-            'edit'               => esc_html( 'Edit', 'html5blank' ),
-            'edit_item'          => esc_html( 'Edit HTML5 Blank Custom Post', 'html5blank' ),
-            'new_item'           => esc_html( 'New HTML5 Blank Custom Post', 'html5blank' ),
-            'view'               => esc_html( 'View HTML5 Blank Custom Post', 'html5blank' ),
-            'view_item'          => esc_html( 'View HTML5 Blank Custom Post', 'html5blank' ),
-            'search_items'       => esc_html( 'Search HTML5 Blank Custom Post', 'html5blank' ),
-            'not_found'          => esc_html( 'No HTML5 Blank Custom Posts found', 'html5blank' ),
-            'not_found_in_trash' => esc_html( 'No HTML5 Blank Custom Posts found in Trash', 'html5blank' ),
+            'name'               => esc_html( 'Miembros de equipo', 'equipo' ), // Rename these to suit
+            'singular_name'      => esc_html( 'Miembro de equipo', 'equipo' ),
+            'add_new'            => esc_html( 'Añadir nuevo', 'equipo' ),
+            'add_new_item'       => esc_html( 'Añadir nuevo miembro de equipo', 'equipo' ),
+            'edit'               => esc_html( 'Editar', 'equipo' ),
+            'edit_item'          => esc_html( 'Editar nuevo miembro de equipo', 'equipo' ),
+            'new_item'           => esc_html( 'Nuevo miembro de equipo', 'equipo' ),
+            'view'               => esc_html( 'Ver miembro de equipo', 'equipo' ),
+            'view_item'          => esc_html( 'Ver miembro de equipo', 'equipo' ),
+            'search_items'       => esc_html( 'Buscar miembro de equipo', 'equipo' ),
+            'not_found'          => esc_html( 'No se encuentra miembro de equipo', 'equipo' ),
+            'not_found_in_trash' => esc_html( 'No hay miembros de equipo para borrar', 'equipo' ),
         ),
         'public'       => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive'  => true,
+        'menu_icon'    => 'dashicons-buddicons-buddypress-logo',
         'supports'     => array(
             'title',
             'editor',

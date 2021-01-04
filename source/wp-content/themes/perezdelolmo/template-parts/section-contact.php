@@ -1,9 +1,9 @@
-<section class="section-contact">
+<section class="section-contact <?php echo $args['bg'] ? $args['bg'] : ""; ?>">
     <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <div class="entry entry--high m-b-2">
-                        Contáctanos <br> <span></span>
+                        Contáctanos <span></span>
                     </div>
                     <div class="row">
                         <div class="col-xs-6 m-b-xs-1 m-b-md-2">

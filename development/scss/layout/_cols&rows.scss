@@ -9,7 +9,13 @@
     padding-left: 0;
     box-sizing: border-box;
     position: relative;
+
+    &.container--min{
+        max-width: 990px;
+    }
 }
+
+
 
 .container--full{
     margin-right: auto;

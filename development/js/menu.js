@@ -12,29 +12,24 @@ export default class Menu {
       this.menuLogo = this.menu.querySelector('#logo span:first-child');
       this.menuLogoSub = this.menu.querySelector('#logo span:last-child');
       this.sideMenu = document.querySelector('#side-menu');
-      this.toggleMenu = this.menu.querySelector('.menu__toggle');
+      this.toggleMenu = document.querySelector('#menu-toggle');
       this.init = this.init.bind(this);
-      this.scroll = 0;
+      this.listeners = this.listeners.bind(this);
       
+      this.scroll = 0;
+     
       this.init();
     }
 
     init(){
-        ScrollTrigger.create({
-            start: 'top -100',
-            end: 99999,
-            toggleClass: {className: 'scrolled', targets: ['#menu-bar', '#side-menu',  '#menu-schedule']}
-          });
 
-      this.toggleMenu.addEventListener('click', () => {
-        this.toggleMenu.classList.toggle('on');
-        this.sideMenu.classList.toggle('active');
-        if(this.sideMenu.classList.contains('active')){
-          document.querySelector('body').classList.add('block');
-        } else{
-          document.querySelector('body').classList.remove('block');
-        }
-      });
+     
+      this.listeners();
+      ScrollTrigger.create({
+          start: 'top -100',
+          end: 99999,
+          toggleClass: {className: 'scrolled', targets: ['#menu-bar', '#side-menu',  '#menu-schedule']}
+        });
 
       window.addEventListener('resize', () => {
         if(this.sideMenu.classList.contains('active')){
@@ -47,6 +42,20 @@ export default class Menu {
           this.toggleMenu.classList.remove('on');
         }
       });
+    }
+
+    listeners()  {
+     
+      this.toggleMenu.addEventListener('click', () => {
+        this.toggleMenu.classList.toggle('on');
+        this.sideMenu.classList.toggle('active');
+        if(this.sideMenu.classList.contains('active')){
+          document.querySelector('body').classList.add('block');
+        } else{
+          document.querySelector('body').classList.remove('block');
+        }
+      });
+
     }
 
 }
